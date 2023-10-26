@@ -31,7 +31,7 @@ const Index: FunctionComponent<IndexProps> = () => {
   return (
     <div
       className={`flex xl:justify-center px-3 py-2 bg-white shadow-md md:px-5 lg:py-3 w-full ${
-        isHeaderFixed ? "fixed top-0 left-0 w-full" : "relative"
+        isHeaderFixed ? "fixed top-0 left-0 w-full z-10" : "relative"
       }`}
     >
       <div className="flex justify-between w-full items-center xl:w-[1200px]">

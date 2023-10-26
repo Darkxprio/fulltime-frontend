@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useCallback, useMemo, useState } from "react";
 import { IndexProps } from "./Model";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -12,37 +12,30 @@ const Index: FunctionComponent<IndexProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
-  };
+  }, []);
 
-  const handleCheckCommit = () => {
+  const handleCheckCommit = useCallback(() => {
     window.open(html_url, "_blank");
-  };
+  }, [html_url]);
 
-  const funcionalDate = new Date(date);
+  const funcionalDate = useMemo(() => {
+    return new Date(date);
+  }, [date]);
 
-  const year = funcionalDate.getFullYear();
-  const month = funcionalDate.getMonth() + 1;
-  const day = funcionalDate.getDate();
-  const hours = funcionalDate.getHours();
-  const minutes = funcionalDate.getMinutes();
-  const seconds = funcionalDate.getSeconds();
-
-  const formattedDate = `${year}-${month.toString().padStart(2, "0")}-${day
-    .toString()
-    .padStart(2, "0")} ${hours.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  const formattedDate = useMemo(() => {
+    return funcionalDate.toISOString().slice(0, 19).replace("T", " ");
+  }, [funcionalDate]);
 
   return (
     <div className="w-full flex justify-center">
       <div className="grid w-[85%] sm:w-[65%] md:w-[70%] lg:w-[65%] xl:w-[800px] grid-cols-10 items-center flex-col p-3 border hover:border-[#00adef]">
-        <div className="col-span-7 md:col-span-8 flex flex-col">
+        <div className="col-span-7 md:col-span-8 flex flex-col items-start text-left">
           <p>
             Date:&nbsp;<span>{formattedDate}</span>
           </p>
