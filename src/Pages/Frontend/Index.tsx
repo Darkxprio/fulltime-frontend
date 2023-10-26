@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { IndexProps } from "./Model";
-import TopSection from "./Components/TopSectionFrontend/Index";
+import TopSection from "./Components/TopSection/Index";
 import CardsSection from "./Components/CardsSection/Index";
 
 const Index: FunctionComponent<IndexProps> = () => {
