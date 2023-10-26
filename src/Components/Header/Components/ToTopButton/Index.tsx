@@ -27,7 +27,7 @@ const Index: FunctionComponent<IndexProps> = () => {
   }, []);
   return (
     <div
-      className={`bg-white w-[50px] h-[50px] fixed z-10 justify-center items-center bottom-[65px] right-[12px] lg:bottom-[55px] lg:right-[40px] border-[3px] border-gray-500 hover:cursor-pointer ${
+      className={`bg-white w-[50px] h-[50px] fixed z-10 justify-center items-center bottom-[101px] right-[12px] sm:bottom-[77px] lg:bottom-[61px] lg:right-[12px] border-[3px] border-gray-500 hover:cursor-pointer ${
         isScrolled ? " flex" : " hidden"
       }`}
       onClick={scrollToTop}
