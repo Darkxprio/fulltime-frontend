@@ -40,9 +40,7 @@ const backendSlice = createSlice({
 
 export const loadBackendThunk = createAsyncThunk("loadBackend", async () => {
   try {
-    const response = await fetch(
-      "https://api.github.com/repos/Darkxprio/fulltime-backend/commits"
-    );
+    const response = await fetch("/backend");
     if (response.ok) {
       const data = await response.json();
       return data as DataType[];
