@@ -1,17 +1,31 @@
-import { FunctionComponent, useEffect, useState } from "react";
-import { CommitData, IndexProps } from "./Model";
+import { FunctionComponent, useEffect } from "react";
+import { IndexProps } from "./Model";
 import CardCommits from "../../../../Components/CardCommits/Index";
+import { useAppDispatch, useAppSelector } from "../../../../Store/Hooks";
+import {
+  RequestStatus,
+  loadBackendThunk,
+} from "../../../../Store/Features/BackendSlice";
 
 const Index: FunctionComponent<IndexProps> = () => {
-  const [data, setData] = useState<CommitData[]>([]);
+  const dispatch = useAppDispatch();
+  const { data, status } = useAppSelector((state) => state.backend);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/Darkxprio/fulltime-backend/commits")
-      .then((response) => response.json())
-      .then((result) => {
-        setData(result);
-      });
-  }, []);
+    dispatch(loadBackendThunk());
+  }, [dispatch]);
+
+  if (status === RequestStatus.pending) {
+    return <div>Loading...</div>;
+  }
+
+  if (status === RequestStatus.failed) {
+    return <div>Failed</div>;
+  }
+
+  if (status === RequestStatus.idle) {
+    return <div>Please load again</div>;
+  }
 
   console.log(data);
   return (
