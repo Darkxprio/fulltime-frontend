@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { DataType } from "./Model";
-
+import axios from "axios";
 interface BackendState {
   data: DataType[];
   status?: RequestStatus;
@@ -40,10 +40,10 @@ const backendSlice = createSlice({
 
 export const loadBackendThunk = createAsyncThunk("loadBackend", async () => {
   try {
-    const response = await fetch("/backend");
-    if (response.ok) {
-      const data = await response.json();
-      return data as DataType[];
+    const response = await axios.get("/backend");
+    if (response.data) {
+      console.log(response.data);
+      return response.data as DataType[];
     } else {
       throw new Error("Failed to fetch data");
     }
