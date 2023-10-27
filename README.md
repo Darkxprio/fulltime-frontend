@@ -51,15 +51,6 @@ http://localhost:3000/
 
 Note: If you have another apps running, try with the port 3001, 3002, 3003, 3004... etc.
 
-## Test
-
-If you want to do some tests of the app, you can run the code bellow in the terminal.
-
-```bash
-# unit tests
-$ yarn test
-```
-
 ## Notes
 
 - The app is listening the port 4000 because the backend has the same port, if you made changes in the backend port, you have to do it here too, you have to go to 'src/Axios/config.js' and change the number of the port.

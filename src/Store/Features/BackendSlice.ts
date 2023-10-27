@@ -42,7 +42,6 @@ export const loadBackendThunk = createAsyncThunk("loadBackend", async () => {
   try {
     const response = await axios.get("/backend");
     if (response.data) {
-      console.log(response.data);
       return response.data as DataType[];
     } else {
       throw new Error("Failed to fetch data");
