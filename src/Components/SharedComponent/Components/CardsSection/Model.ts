@@ -1,0 +1,15 @@
+export interface CardsSectionProps {
+  data: DataType[];
+}
+
+interface DataType {
+  commit: {
+    author: {
+      name: string;
+      date: string;
+      email: string;
+    };
+    message: string;
+  };
+  html_url: string;
+}

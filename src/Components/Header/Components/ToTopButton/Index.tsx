@@ -1,10 +1,9 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import { IndexProps } from "./Model";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-const Index: FunctionComponent<IndexProps> = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+const ToTopButton: FunctionComponent = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,4 +36,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default ToTopButton;

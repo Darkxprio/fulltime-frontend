@@ -1,9 +1,8 @@
 import { FunctionComponent } from "react";
-import { IndexProps } from "./Model";
 import MainHeader from "./Components/MainHeader/Index";
 import ToTopButton from "./Components/ToTopButton/Index";
 
-const Index: FunctionComponent<IndexProps> = () => {
+const Header: FunctionComponent = () => {
   return (
     <header>
       <MainHeader />
@@ -12,4 +11,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default Header;

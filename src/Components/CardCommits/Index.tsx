@@ -3,14 +3,14 @@ import { IndexProps } from "./Model";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const Index: FunctionComponent<IndexProps> = ({
+const CardCommits: FunctionComponent<IndexProps> = ({
   name,
   date,
   email,
   html_url,
   message,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
@@ -68,4 +68,4 @@ const Index: FunctionComponent<IndexProps> = ({
   );
 };
 
-export default Index;
+export default CardCommits;

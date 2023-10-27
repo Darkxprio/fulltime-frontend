@@ -1,8 +1,7 @@
 import { FunctionComponent } from "react";
-import { IndexProps } from "./Model";
 import Url from "../../../Url/Index";
 
-const Index: FunctionComponent<IndexProps> = () => {
+const RightSectionFooter: FunctionComponent = () => {
   return (
     <div className="flex flex-row gap-3 justify-center text-white">
       <Url to="/">
@@ -18,4 +17,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default RightSectionFooter;

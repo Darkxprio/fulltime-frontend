@@ -1,8 +1,7 @@
-import { FunctionComponent } from "react";
-import { IndexProps } from "./Model";
+import { FunctionComponent, PropsWithChildren } from "react";
 
-const Index: FunctionComponent<IndexProps> = ({ children }) => {
+const Content: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return <main>{children}</main>;
 };
 
-export default Index;
+export default Content;

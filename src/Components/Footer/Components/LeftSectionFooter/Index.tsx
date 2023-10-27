@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
-import { IndexProps } from "./Model";
 
-const Index: FunctionComponent<IndexProps> = () => {
+const LeftSectionFooter: FunctionComponent = () => {
   return (
     <div className="text-white">
       <p className="hidden md:inline-block">
@@ -17,4 +16,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default LeftSectionFooter;

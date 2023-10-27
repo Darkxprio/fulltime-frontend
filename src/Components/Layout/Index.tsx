@@ -1,11 +1,10 @@
 import { FunctionComponent } from "react";
-import { IndexProps } from "./Model";
 import Header from "../Header/Index";
 import Content from "../Content/Index";
 import Footer from "../Footer/Index";
 import { Outlet } from "react-router-dom";
 
-const Index: FunctionComponent<IndexProps> = () => {
+const Layout: FunctionComponent = () => {
   return (
     <>
       <Header />
@@ -17,4 +16,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default Layout;

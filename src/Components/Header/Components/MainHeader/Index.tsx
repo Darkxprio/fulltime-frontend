@@ -1,10 +1,9 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { IndexProps } from "./Model";
 import Url from "../../../Url/Index";
 
-const Index: FunctionComponent<IndexProps> = () => {
-  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+const MainHeader: FunctionComponent = () => {
+  const [isHeaderFixed, setIsHeaderFixed] = useState<boolean>(false);
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +25,8 @@ const Index: FunctionComponent<IndexProps> = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -50,4 +50,4 @@ const Index: FunctionComponent<IndexProps> = () => {
   );
 };
 
-export default Index;
+export default MainHeader;
