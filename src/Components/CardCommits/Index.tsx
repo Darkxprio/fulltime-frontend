@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useMemo, useState } from "react";
+import { FunctionComponent, useMemo } from "react";
 import { IndexProps } from "./Model";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -10,20 +10,6 @@ const CardCommits: FunctionComponent<IndexProps> = ({
   html_url,
   message,
 }) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  const handleMouseEnter = useCallback(() => {
-    setIsHovered(true);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
-  }, []);
-
-  const handleCheckCommit = useCallback(() => {
-    window.open(html_url, "_blank");
-  }, [html_url]);
-
   const funcionalDate = useMemo(() => {
     return new Date(date);
   }, [date]);
@@ -50,18 +36,17 @@ const CardCommits: FunctionComponent<IndexProps> = ({
           </p>
         </div>
         <div className="flex items-center justify-center col-span-3 md:col-span-2 relative">
-          {isHovered && (
-            <span className="text-xs text-white absolute -top-6 bg-[#485665] rounded-full px-2 before:w-0 before:h-0 before:border-t-[8px] before:border-t-[#485665] before:border-l-[4px] before:border-l-transparent before:border-r-[4px] before:border-r-transparent before:absolute before:-bottom-[8px] before:left-[50%] before:-translate-x-1/2">
+          <div className="group">
+            <span className="hidden group-hover:block text-xs text-white absolute left-[50%] -translate-x-1/2 -top-6 bg-[#485665] rounded-full px-2 before:w-0 before:h-0 before:border-t-[8px] before:border-t-[#485665] before:border-l-[4px] before:border-l-transparent before:border-r-[4px] before:border-r-transparent before:absolute before:-bottom-[8px] before:left-[50%] before:-translate-x-1/2">
               Go Link
             </span>
-          )}
-          <FontAwesomeIcon
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleCheckCommit}
-            icon={faGithub}
-            className="text-[50px] hover:text-[#00adef] cursor-pointer"
-          />
+            <a href={html_url} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="text-[50px] hover:text-[#00adef] cursor-pointer"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

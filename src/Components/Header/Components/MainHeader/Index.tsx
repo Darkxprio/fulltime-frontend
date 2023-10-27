@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import Url from "../../../Url/Index";
+import { Link } from "react-router-dom";
 
 const MainHeader: FunctionComponent = () => {
   const [isHeaderFixed, setIsHeaderFixed] = useState<boolean>(false);
@@ -35,13 +35,13 @@ const MainHeader: FunctionComponent = () => {
       }`}
     >
       <div className="flex justify-between w-full items-center xl:w-[1200px]">
-        <Url to="/">
+        <Link to="/">
           <img
             src="https://uploads-ssl.webflow.com/643458de4c12c42a070ce23a/64dcc8c9fad4ead0c55b75ed_Vectors-Wrapper.svg"
-            alt="Logo"
+            alt="Logo Fulltime Force"
             className="w-16 md:w-20 lg:w-24"
           />
-        </Url>
+        </Link>
         <h1 className="text-[20px] md:text-[24px] lg:text-[30px] italic font-medium whitespace-nowrap hover:text-[#00adef]">
           Jordano Cuadros
         </h1>

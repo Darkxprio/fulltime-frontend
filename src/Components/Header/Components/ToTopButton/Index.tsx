@@ -25,14 +25,14 @@ const ToTopButton: FunctionComponent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <div
+    <button
       className={`bg-white w-[50px] h-[50px] fixed z-10 justify-center items-center bottom-[101px] right-[12px] sm:bottom-[77px] lg:bottom-[61px] lg:right-[12px] border-[3px] border-gray-500 hover:cursor-pointer ${
         isScrolled ? " flex" : " hidden"
       }`}
       onClick={scrollToTop}
     >
       <FontAwesomeIcon icon={faAngleUp} />
-    </div>
+    </button>
   );
 };
 
