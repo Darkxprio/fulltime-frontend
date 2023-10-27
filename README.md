@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project developed with React, Typescript, Redux, Tailwind and Axios.
+I use the API from Github to catch the commits made on this repository and the backend repository of this same project and receive the information to show it.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+This project provides the following features:
 
-### `yarn start`
+- A backend API for tracking commits made on a GitHub repository.
+- A frontend website that displays the commit history of a GitHub repository.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Cloning the Repository
 
-### `yarn test`
+At first, you have to clone the repository in the directory to you prefer, open the terminal and write/copy this code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ git clone https://github.com/Darkxprio/fulltime-frontend.git
+```
 
-### `yarn build`
+## Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Now you have to get inside of the directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ cd fulltime-frontend
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install yarn to download all the modules of the project.
 
-### `yarn eject`
+```bash
+$ yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the code bellow to start the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# development
+$ yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Authentication
 
-## Learn More
+Usually when you run the app, your browser opens up with the url of the app. But if you wanna check if the app is running and you're not running in your computer another app go to the next url in your browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+http://localhost:3000/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note: If you have another apps running, try with the port 3001, 3002, 3003, 3004... etc.
+
+## Test
+
+If you want to do some tests of the app, you can run the code bellow in the terminal.
+
+```bash
+# unit tests
+$ yarn test
+```
+
+## Notes
+
+- The app is listening the port 4000 because the backend has the same port, if you made changes in the backend port, you have to do it here too, you have to go to 'src/Axios/config.js' and change the number of the port.
+- The project is developed with Yarn Version 1.22.19, try to have it or a most recent version to run the project, you can download it from https://classic.yarnpkg.com/en/docs/install#windows-stable
