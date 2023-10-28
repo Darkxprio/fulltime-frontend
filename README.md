@@ -14,7 +14,7 @@ This project provides the following features:
 
 ## Cloning the Repository
 
-At first, you have to clone the repository in the directory to you prefer, open the terminal and write/copy this code.
+At first, you have to clone the repository in the directory to you prefer(Create a directory of 1 word ex.('frontendTest') because when you use two or more words, usually when you try to run the server, don't find the right path and it get's broken) open the terminal and write/copy this code.
 
 ```bash
 $ git clone https://github.com/Darkxprio/fulltime-frontend.git
